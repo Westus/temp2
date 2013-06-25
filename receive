@@ -1,0 +1,16 @@
+rednet.open ("left")
+while true do
+id, message, message2 = rednet.receive()
+message = tonumber (message)
+message2 = tonumber (message2)
+if id == 13 then
+  for i = 1, 2, 1 do
+    rs.setOutput ("top", true)
+    sleep (message)
+    rs.setOutput ("top", false)
+    sleep (message2)
+  end
+else
+print ("ERROR ", "ID - ", id, " Message - ", message, time)  
+end
+end
